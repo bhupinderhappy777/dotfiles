@@ -1,0 +1,8 @@
+# Ignore temp files
+*.swp
+*~
+.DS_Store
+
+# Ignore specific Plasma session state (often changes randomly)
+.config/session/
+.config/plasmashellrc_old
