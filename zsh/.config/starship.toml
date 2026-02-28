@@ -1,0 +1,24 @@
+add_newline = false
+
+# In your version, the variable is $username
+format = """$username$hostname [➜](bold green) $directory$git_branch$git_status$character"""
+
+[username]
+show_always = true
+style_user = "bold cyan"
+disabled = false
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style_hostname = "bold blue"
+disabled = false
+format = "@[$hostname]($style) "
+
+[directory]
+style = "white"
+truncation_length = 3
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
