@@ -12,7 +12,7 @@ killall -9 plasmashell 2>/dev/null
 sleep 3
 
 # 3. Copy the master file and IMMEDIATELY patch the ID
-cp "$HOME/dotfiles/plasma/appletsrc.master" "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+cp "$HOME/dotfiles/plasma/v6/appletsrc.master" "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
 sed -i "s/activityId=[a-z0-9-]*/activityId=$CURRENT_ACT/g" "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
 
 # 4. Wipe caches and restart

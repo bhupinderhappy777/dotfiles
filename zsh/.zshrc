@@ -9,4 +9,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 export PATH
 
-PROMPT='%n@%m:%~ %# '
+PROMPT='%F{cyan}%n%f@%F{blue}%m%f %F{green}➜ %F{white}%~ %f$(git branch 2>/dev/null | grep "* " | sed -e "s/* \(.*\)/ (\1)/") %# '
+
