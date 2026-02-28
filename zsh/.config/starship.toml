@@ -11,7 +11,7 @@ format = "[$user]($style)"
 
 [hostname]
 ssh_only = false
-style_hostname = "bold blue"
+style = "bold blue"
 disabled = false
 format = "@[$hostname]($style) "
 
