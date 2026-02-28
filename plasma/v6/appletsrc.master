@@ -1,4 +1,4 @@
-# Captured from fedora on Sat 28 Feb 2026 04:26:21 AM PST
+# Captured from fedora on Sat 28 Feb 2026 05:11:23 AM PST
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -168,6 +168,7 @@ plugin=org.kde.plasma.icontasks
 [Containments][211][Applets][214][Configuration][General]
 groupingAppIdBlacklist=org.kde.konsole.desktop
 groupingLauncherUrlBlacklist=applications:org.kde.konsole.desktop
+launchers=preferred://filemanager,preferred://browser
 
 [Containments][211][Applets][215]
 immutability=1
