@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh Wallhaven Wallpaper
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/bhupi/dotfiles/scripts/wallpaper_wallhaven.sh
+
+[Install]
+WantedBy=default.target
