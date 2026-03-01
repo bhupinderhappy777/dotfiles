@@ -10,18 +10,46 @@ fi
 # Starship Initialization
 eval "$(starship init zsh)"
 
+# Starship Initialization
+eval "$(starship init zsh)"
+
+# --- Global KWallet Settings ---
+# Moving these here makes them available to BOTH functions
+K_WALLET="kdewallet"
+K_FOLDER="Secret Service"
+
 # Wrapper to run ANY command with the KWallet Vault password
 withvault() {
-    local WALLET="kdewallet"
-    local FOLDER="Secret Service"
     local ENTRY="vault_pass"
-
-    # Run the provided command ($@) with the vault variable set
-    ANSIBLE_VAULT_PASSWORD_FILE=<(kwallet-query -r "$ENTRY" -f "$FOLDER" "$WALLET") "$@"
+    ANSIBLE_VAULT_PASSWORD_FILE=<(kwallet-query -r "$ENTRY" -f "$K_FOLDER" "$K_WALLET") "$@"
 }
+
+# UFV RDP Helper
+ufv_connect() {
+    local ENTRY="ufv_pass"
+    # Fetch the password using the global variables
+    local PASS=$(kwallet-query -r "$ENTRY" -f "$K_FOLDER" "$K_WALLET")
+
+    if [ -z "$PASS" ]; then
+        echo "❌ Error: Could not fetch 'ufv_pass' from KWallet folder '$K_FOLDER'"
+        return 1
+    fi
+
+    echo " Connecting to UFV Desktop..."
+    # Quoting $PASS ensures special characters like @ don't break the shell command
+    xfreerdp /v:AA353W2508 /g:rdl.ufv.ca /gu:300140363 /gd:AD-UFV /u:300140363 /d:AD-UFV \
+             /cert:ignore +clipboard /p:"$PASS" /gp:"$PASS" /dynamic-resolution
+}
+
 
 # For running playbooks
 alias ap='withvault ansible-playbook'
 
 # For managing the vault (editing, creating, rekeying)
 alias av='withvault ansible-vault'
+
+# To connect to ufv lab
+alias urdp='ufv_connect'
+
+# Add Flatpak binaries to PATH
+export PATH=$PATH:/var/lib/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin
