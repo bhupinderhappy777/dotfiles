@@ -38,7 +38,7 @@ ufv_connect() {
     echo " Connecting to UFV Desktop..."
     # Quoting $PASS ensures special characters like @ don't break the shell command
     xfreerdp /v:AA353W2508 /g:rdl.ufv.ca /gu:300140363 /gd:AD-UFV /u:300140363 /d:AD-UFV \
-             /cert:ignore +clipboard /p:"$PASS" /gp:"$PASS" /dynamic-resolution
+              +clipboard /p:"$PASS" /gp:"$PASS" /dynamic-resolution
 }
 
 
