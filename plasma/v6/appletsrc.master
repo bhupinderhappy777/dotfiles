@@ -1,4 +1,4 @@
-# Captured from localhost-live on Sun 01 Mar 2026 04:39:46 PM PST
+# Captured from localhost-live on Sun 01 Mar 2026 04:48:10 PM PST
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -32,7 +32,7 @@ ToolBoxButtonY=20
 Color=0,0,0
 
 [Containments][178][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_122500.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_164247.jpg
 
 [Containments][179]
 activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
@@ -132,8 +132,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][179][Applets][184][General]
-extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.weather
-hiddenItems=Back In Time,ibus-ui-gtk3,org.kde.plasma.clipboard
+extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.clipboard,org.kde.plasma.cameraindicator,org.kde.plasma.weather,org.kde.plasma.brightness,org.kde.plasma.keyboardindicator
+hiddenItems=Back In Time,ibus-ui-gtk3,org.kde.plasma.clipboard,org.kde.plasma.brightness
 knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.weather
 
 [Containments][179][Applets][197]
@@ -152,12 +152,19 @@ plugin=org.kde.plasma.panelspacer
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
+[Containments][179][Applets][239]
+immutability=1
+plugin=org.kde.plasma.lock_logout
+
+[Containments][179][Applets][239][Configuration][General]
+actionsOrder=lockScreen,switchUser,requestShutDown,requestReboot,requestLogout,requestLogoutScreen,suspendToRam,suspendToDisk
+
 [Containments][179][ConfigDialog]
 DialogHeight=84
 DialogWidth=1920
 
 [Containments][179][General]
-AppletOrder=205;203;184;197
+AppletOrder=205;203;184;197;239
 
 [Containments][211]
 activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
@@ -175,7 +182,7 @@ plugin=org.kde.plasma.icontasks
 [Containments][211][Applets][214][Configuration][General]
 groupingAppIdBlacklist=org.kde.konsole.desktop
 groupingLauncherUrlBlacklist=applications:org.kde.konsole.desktop
-launchers=preferred://filemanager,preferred://browser
+launchers=
 
 [Containments][211][Applets][215]
 immutability=1
@@ -281,7 +288,7 @@ extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.
 knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.kscreen,org.kde.plasma.nightcolorcontrol
 
 [Containments][217][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_122500.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_164247.jpg
 
 [Containments206Appletsts][182][Configuration][General]
 groupingAppIdBlacklist=org.kde.konsole.desktop
