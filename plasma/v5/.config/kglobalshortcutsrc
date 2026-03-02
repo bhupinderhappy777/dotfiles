@@ -308,6 +308,7 @@ activate widget 156=none,none,Activate Application Launcher Widget
 activate widget 180=none,none,Activate Application Launcher Widget
 activate widget 182=none,none,Activate Icons-only Task Manager Widget
 activate widget 185=none,none,Activate System Tray Widget
+activate widget 237=Meta+F4,none,Activate Lock/Logout Widget
 activate widget 28=none,none,Activate Application Launcher Widget
 activate widget 3=Alt+F1,none,Activate Application Launcher Widget
 activate widget 51=none,none,Activate Application Launcher Widget

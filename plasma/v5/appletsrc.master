@@ -1,4 +1,4 @@
-# Captured from lenovopc on Sat 28 Feb 2026 04:24:06 AM PST
+# Captured from lenovopc on Sun 01 Mar 2026 04:12:22 PM PST
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -16,7 +16,7 @@ immutability=1
 lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.color
+wallpaperplugin=org.kde.image
 
 [Containments][178][ConfigDialog]
 DialogHeight=540
@@ -24,14 +24,17 @@ DialogWidth=720
 
 [Containments][178][General]
 ToolBoxButtonState=topcenter
-ToolBoxButtonX=444
+ToolBoxButtonX=559
 ToolBoxButtonY=20
 
 [Containments][178][Wallpaper][org.kde.color][General]
 Color=0,0,0
 
+[Containments][178][Wallpaper][org.kde.image][General]
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_160818.jpg
+
 [Containments][179]
-activityId=
+activityId=b57cce92-b72c-4053-8913-d7a424d7ddbc
 formfactor=2
 immutability=1
 lastScreen=0
@@ -44,7 +47,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][179][Applets][184][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 SystrayContainmentId=185
 
 [Containments][179][Applets][197]
@@ -64,15 +67,26 @@ plugin=org.kde.plasma.panelspacer
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
+[Containments][179][Applets][237]
+immutability=1
+plugin=org.kde.plasma.lock_logout
+
+[Containments][179][Applets][237][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][179][Applets][237][Shortcuts]
+global=Meta+F4
+
 [Containments][179][ConfigDialog]
 DialogHeight=84
 DialogWidth=1920
 
 [Containments][179][General]
-AppletOrder=205;203;184;197
+AppletOrder=205;203;184;197;237
 
 [Containments][185]
-activityId=
+activityId=b57cce92-b72c-4053-8913-d7a424d7ddbc
 formfactor=2
 immutability=1
 lastScreen=0
@@ -164,12 +178,15 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][185][General]
-extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.kscreen,Back In Time,ibus-ui-gtk3,org.kde.plasma.clipboard
+extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.clipboard
 hiddenItems=Back In Time,ibus-ui-gtk3,org.kde.plasma.clipboard
 knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.kscreen,org.kde.plasma.nightcolorcontrol
 
+[Containments][185][Wallpaper][org.kde.image][General]
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_160818.jpg
+
 [Containments][211]
-activityId=
+activityId=b57cce92-b72c-4053-8913-d7a424d7ddbc
 formfactor=2
 immutability=1
 lastScreen=0
@@ -204,7 +221,7 @@ DialogWidth=1920
 AppletOrder=235;214;234;215
 
 [Containments][217]
-activityId=
+activityId=b57cce92-b72c-4053-8913-d7a424d7ddbc
 formfactor=2
 immutability=1
 lastScreen=0
@@ -320,6 +337,9 @@ PreloadWeight=42
 extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.kscreen,org.kde.plasma.nightcolorcontrol
 knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.kscreen,org.kde.plasma.nightcolorcontrol
 
+[Containments][217][Wallpaper][org.kde.image][General]
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_160818.jpg
+
 [Containments206Appletsts][182][Configuration][General]
 groupingAppIdBlacklist=org.kde.konsole.desktop
 groupingLauncherUrlBlacklist=applications:org.kde.konsole.desktop
@@ -328,4 +348,4 @@ launchers=preferred://filemanager,applications:microsoft-edge.desktop,applicatio
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,b57cce92-b72c-4053-8913-d7a424d7ddbc,1,desktop:/Client_Documents
-screenMapping=file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc
+screenMapping=file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc
