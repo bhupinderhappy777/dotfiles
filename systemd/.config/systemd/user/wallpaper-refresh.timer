@@ -1,9 +1,11 @@
 [Unit]
-Description=Run wallpaper refresh daily at 3am
+Description=Wallpaper refresh 30s after login + daily 3am
+Requires=wallpaper-refresh.service
 
 [Timer]
+OnUnitActiveSec=30m
 OnCalendar=*-*-* 03:00:00
 Persistent=true
 
 [Install]
-WantedBy=timers.target
+WantedBy=graphical-session.target
