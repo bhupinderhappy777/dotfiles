@@ -1,4 +1,4 @@
-# Captured from localhost-live on Sun 01 Mar 2026 04:48:10 PM PST
+# Captured from localhost-live on Mon 02 Mar 2026 05:36:48 AM PST
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -32,7 +32,7 @@ ToolBoxButtonY=20
 Color=0,0,0
 
 [Containments][178][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_164247.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260302_030040.jpg
 
 [Containments][179]
 activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
@@ -159,12 +159,23 @@ plugin=org.kde.plasma.lock_logout
 [Containments][179][Applets][239][Configuration][General]
 actionsOrder=lockScreen,switchUser,requestShutDown,requestReboot,requestLogout,requestLogoutScreen,suspendToRam,suspendToDisk
 
+[Containments][179][Applets][241]
+immutability=1
+plugin=org.kde.plasma.kicker
+
+[Containments][179][Applets][241][Configuration]
+popupHeight=476
+popupWidth=312
+
+[Containments][179][Applets][241][Configuration][General]
+favoritesPortedToKAstats=true
+
 [Containments][179][ConfigDialog]
 DialogHeight=84
 DialogWidth=1920
 
 [Containments][179][General]
-AppletOrder=205;203;184;197;239
+AppletOrder=241;205;203;184;197;239
 
 [Containments][211]
 activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
@@ -288,7 +299,7 @@ extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.
 knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.manage-inputmethod,org.kde.kdeconnect,org.kde.plasma.networkmanagement,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.kscreen,org.kde.plasma.nightcolorcontrol
 
 [Containments][217][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_164247.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260302_030040.jpg
 
 [Containments206Appletsts][182][Configuration][General]
 groupingAppIdBlacklist=org.kde.konsole.desktop
@@ -298,4 +309,4 @@ launchers=preferred://filemanager,applications:microsoft-edge.desktop,applicatio
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,b57cce92-b72c-4053-8913-d7a424d7ddbc,1,desktop:/Client_Documents
-screenMapping=file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc
+screenMapping=file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc
