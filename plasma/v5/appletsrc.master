@@ -1,4 +1,4 @@
-# Captured from lenovopc on Sun 01 Mar 2026 04:12:22 PM PST
+# Captured from lenovopc on Mon 02 Mar 2026 05:43:01 AM PST
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -78,12 +78,19 @@ DialogWidth=720
 [Containments][179][Applets][237][Shortcuts]
 global=Meta+F4
 
+[Containments][179][Applets][238]
+immutability=1
+plugin=org.kde.plasma.kickoff
+
+[Containments][179][Applets][238][Configuration][General]
+favoritesPortedToKAstats=true
+
 [Containments][179][ConfigDialog]
 DialogHeight=84
 DialogWidth=1920
 
 [Containments][179][General]
-AppletOrder=205;203;184;197;237
+AppletOrder=238;205;203;184;197;237
 
 [Containments][185]
 activityId=b57cce92-b72c-4053-8913-d7a424d7ddbc
@@ -348,4 +355,4 @@ launchers=preferred://filemanager,applications:microsoft-edge.desktop,applicatio
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,b57cce92-b72c-4053-8913-d7a424d7ddbc,1,desktop:/Client_Documents
-screenMapping=file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc
+screenMapping=file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc
