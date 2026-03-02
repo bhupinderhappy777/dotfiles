@@ -1,6 +1,4 @@
-# Captured from localhost-live on Sun 01 Mar 2026 03:44:46 PM PST
-# Captured from localhost-live on Sun 01 Mar 2026 03:42:48 PM PST
-# Captured from localhost-live on Sun 01 Mar 2026 12:27:13 PM PST
+# Captured from localhost-live on Sun 01 Mar 2026 04:39:46 PM PST
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -13,7 +11,7 @@ RightButton;NoModifier=org.kde.contextmenu
 ItemGeometries-1280x800=
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
-activityId=e232bd7f-7cb9-4d5e-8de8-7b48666ef5d2
+activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
 formfactor=0
 immutability=1
 lastScreen=0
@@ -37,7 +35,7 @@ Color=0,0,0
 Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260301_122500.jpg
 
 [Containments][179]
-activityId=e232bd7f-7cb9-4d5e-8de8-7b48666ef5d2
+activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
 formfactor=2
 immutability=1
 lastScreen=0
@@ -46,7 +44,7 @@ plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
 [Containments][179][Applets][184]
-activityId=e232bd7f-7cb9-4d5e-8de8-7b48666ef5d2
+activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
 formfactor=2
 immutability=1
 lastScreen=0
@@ -162,7 +160,7 @@ DialogWidth=1920
 AppletOrder=205;203;184;197
 
 [Containments][211]
-activityId=e232bd7f-7cb9-4d5e-8de8-7b48666ef5d2
+activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
 formfactor=2
 immutability=1
 lastScreen=0
@@ -205,7 +203,7 @@ DialogWidth=1920
 AppletOrder=235;214;234;215
 
 [Containments][217]
-activityId=e232bd7f-7cb9-4d5e-8de8-7b48666ef5d2
+activityId=95e50ffc-5f5a-4aac-b260-1c4020451c92
 formfactor=2
 immutability=1
 lastScreen=0
@@ -293,4 +291,4 @@ launchers=preferred://filemanager,applications:microsoft-edge.desktop,applicatio
 
 [ScreenMapping]
 itemsOnDisabledScreens=1,b57cce92-b72c-4053-8913-d7a424d7ddbc,1,desktop:/Client_Documents
-screenMapping=file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc
+screenMapping=file:///home/bhupi/Desktop/Client_Documents,1,b57cce92-b72c-4053-8913-d7a424d7ddbc,file:///home/bhupi/Desktop/UFV,0,b57cce92-b72c-4053-8913-d7a424d7ddbc
