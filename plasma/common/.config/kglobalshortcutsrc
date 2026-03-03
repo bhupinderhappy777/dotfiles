@@ -1,5 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
+switch-to-activity-563d5848-eadb-45b9-beca-bd09198cce0f=none,none,Switch to activity "Default"
 switch-to-activity-95e50ffc-5f5a-4aac-b260-1c4020451c92=none,none,Switch to activity "Default"
 switch-to-activity-b57cce92-b72c-4053-8913-d7a424d7ddbc=none,none,Switch to activity "Default"
 
@@ -8,36 +9,9 @@ Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,
 Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,
 _k_friendly_name=Keyboard Layout Switcher
 
-[doublecmd.desktop]
-_k_friendly_name=Double Commander
-_launch=none,none,Double Commander
-
-[firefox.desktop]
-_k_friendly_name=Firefox Web Browser
-_launch=Meta+F,none,Firefox Web Browser
-new-private-window=none,none,Open a New Private Window
-new-window=none,none,Open a New Window
-
-[google-chrome.desktop]
-_k_friendly_name=Google Chrome
-_launch=Meta+G,none,Google Chrome
-new-private-window=none,none,New Incognito Window
-new-window=none,none,New Window
-
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
-
-[kcm_touchpad]
-Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
-Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
-Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=Touchpad
-
-[kded5]
-Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
-_k_friendly_name=KDE Daemon
-display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
@@ -242,10 +216,6 @@ view_actual_size=Meta+0,Meta+0,Zoom to Actual Size
 view_zoom_in=Meta++\tMeta+=,Meta++\tMeta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
-[md.obsidian.Obsidian.desktop]
-_k_friendly_name=Obsidian
-_launch=Meta+O,none,Obsidian
-
 [mediacontrol]
 _k_friendly_name=Media Controller
 mediavolumedown=,,Media volume down
@@ -260,53 +230,6 @@ seekbackwardmedialong=,,Media playback seek backward 30s
 seekforwardmedia=Media Fast Forward,Media Fast Forward,Media playback seek forward 5s
 seekforwardmedialong=,,Media playback seek forward 30s
 stopmedia=Media Stop,Media Stop,Stop media playback
-
-[microsoft-edge.desktop]
-_k_friendly_name=Microsoft Edge
-_launch=Meta+E,none,Microsoft Edge
-new-private-window=none,none,New InPrivate Window
-new-window=none,none,New Window
-
-[node.desktop]
-_k_friendly_name=node /home/bhupi/Documents/mywfg_login/index.mjs
-_launch=Ctrl+L,none,node /home/bhupi/Documents/mywfg_login/index.mjs
-
-[org.kde.dolphin.desktop]
-_k_friendly_name=Dolphin
-_launch=none,Meta+E,Dolphin
-
-[org.kde.kcalc.desktop]
-_k_friendly_name=KCalc
-_launch=Launch (1),Launch (1),KCalc
-
-[org.kde.kinfocenter.desktop]
-_k_friendly_name=Info Center
-_launch=Meta+I,none,Info Center
-
-[org.kde.konsole.desktop]
-NewTab=none,none,Open a New Tab
-NewWindow=none,none,Open a New Window
-_k_friendly_name=Konsole
-_launch=Meta+Return,none,Konsole
-
-[org.kde.krunner.desktop]
-RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Run command on clipboard contents
-_k_friendly_name=KRunner
-_launch=Meta+R\tAlt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
-
-[org.kde.plasma.emojier.desktop]
-_k_friendly_name=Emoji Selector
-_launch=Meta+.\tMeta+Ctrl+Alt+Shift+Space,Meta+.\tMeta+Ctrl+Alt+Shift+Space,Emoji Selector
-
-[org.kde.spectacle.desktop]
-ActiveWindowScreenShot=Meta+Print,Meta+Print,Capture Active Window
-CurrentMonitorScreenShot=none,none,Capture Current Monitor
-FullScreenScreenShot=Shift+Print,Shift+Print,Capture Entire Desktop
-OpenWithoutScreenshot=none,none,Launch Spectacle without capturing
-RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
-WindowUnderCursorScreenShot=Meta+Ctrl+Print,Meta+Ctrl+Print,Capture Window Under Cursor
-_k_friendly_name=Spectacle
-_launch=Print,Print,Launch Spectacle
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
@@ -347,7 +270,7 @@ activate widget 185=none,none,Activate System Tray Widget
 activate widget 237=Meta+F4,none,Activate Lock/Logout Widget
 activate widget 238=none,none,Activate Application Menu Widget
 activate widget 28=none,none,Activate Application Launcher Widget
-activate widget 3=Alt+F1,none,Activate Application Launcher Widget
+activate widget 3=,none,Activate Application Launcher Widget
 activate widget 51=none,none,Activate Application Launcher Widget
 activate widget 74=none,none,Activate Application Launcher Widget
 activate widget 98=none,none,Activate Application Launcher Widget
@@ -369,17 +292,38 @@ switch to next activity=,,Switch to Next Activity
 switch to previous activity=,,Switch to Previous Activity
 toggle do not disturb=,,Toggle do not disturb
 
-[systemsettings.desktop]
-_k_friendly_name=System Settings
-_launch=Tools,Tools,System Settings
-kcm-kscreen=none,none,Display Configuration
-kcm-lookandfeel=none,none,Global Theme
-kcm-users=none,none,Users
-powerdevilprofilesconfig=none,none,Energy Saving
-screenlocker=none,none,Screen Locking
+[services][firefox.desktop]
+_launch=Meta+F
 
-[thunderbird.desktop]
-Compose=none,none,Compose New Message
-Contacts=none,none,Contacts
-_k_friendly_name=Thunderbird Mail
-_launch=Meta+M,none,Thunderbird Mail
+[services][google-chrome.desktop]
+_launch=Meta+G
+
+[services][md.obsidian.Obsidian.desktop]
+_launch=Meta+O
+
+[services][microsoft-edge.desktop]
+_launch=Meta+E
+
+[services][node.desktop]
+_launch=Ctrl+L
+
+[services][org.kde.dolphin.desktop]
+_launch=none
+
+[services][org.kde.kinfocenter.desktop]
+_launch=Meta+I
+
+[services][org.kde.konsole.desktop]
+_launch=Meta+Return
+
+[services][org.kde.krunner.desktop]
+_launch=Meta+R\tAlt+Space\tAlt+F2\tSearch
+
+[services][org.kde.spectacle.desktop]
+RecordRegion=Meta+Shift+R\t
+
+[services][systemsettings.desktop]
+_launch=Tools\t
+
+[services][thunderbird.desktop]
+_launch=Meta+M
