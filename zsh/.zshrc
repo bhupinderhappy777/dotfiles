@@ -36,9 +36,11 @@ ufv_connect() {
     fi
 
     echo " Connecting to UFV Desktop..."
-    # Quoting $PASS ensures special characters like @ don't break the shell command
-    xfreerdp /v:AA353W2508 /g:rdl.ufv.ca /gu:300140363 /gd:AD-UFV /u:300140363 /d:AD-UFV \
-              +clipboard /p:"$PASS" /gp:"$PASS" /dynamic-resolution
+# FreeRDP 3.x Unified Gateway Syntax
+    xfreerdp /v:AA353W2508 \
+             /u:300140363 /d:AD-UFV /p:"$PASS" \
+             /gateway:g:rdl.ufv.ca,u:300140363,d:AD-UFV,p:"$PASS",type:http \
+             /dynamic-resolution +clipboard /cert:ignore
 }
 
 
