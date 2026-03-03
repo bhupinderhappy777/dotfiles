@@ -11,3 +11,13 @@ Name=my_profile
 Parent=FALLBACK/
 TerminalCenter=false
 TerminalMargin=3
+
+[Interaction Options]
+AutoCopySelectedText=true
+CopyTextAsHTML=false
+MiddleClickPasteMode=1
+TrimLeadingSpacesInSelectedText=true
+TrimTrailingSpacesInSelectedText=true
+
+[Terminal Features]
+UrlHintsModifiers=0
