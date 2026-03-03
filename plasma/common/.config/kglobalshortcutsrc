@@ -264,6 +264,9 @@ switch to next activity=,,Switch to Next Activity
 switch to previous activity=,,Switch to Previous Activity
 toggle do not disturb=,,Toggle do not disturb
 
+[services][net.local.wallpaper_wallhaven.sh.desktop]
+_launch=Ctrl+F5
+
 [services][org.kde.konsole.desktop]
 _launch=Meta+Return
 
