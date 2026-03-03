@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Wait for internet connectivity (Google DNS) before hitting the API
+until ping -c 1 -W 2 8.8.8.8 >/dev/null 2>&1; do
+    echo "Network unreachable. Retrying in 5 seconds..."
+    sleep 5
+done
+
+echo "🔍 Searching Wallhaven for 4K Abstract..."
+
 # 1. Environment Setup
 export DISPLAY=:0
 export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"
