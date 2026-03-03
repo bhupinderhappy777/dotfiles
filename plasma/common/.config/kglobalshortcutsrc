@@ -1,8 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
 switch-to-activity-563d5848-eadb-45b9-beca-bd09198cce0f=none,none,Switch to activity "Default"
-switch-to-activity-95e50ffc-5f5a-4aac-b260-1c4020451c92=none,none,Switch to activity "Default"
-switch-to-activity-b57cce92-b72c-4053-8913-d7a424d7ddbc=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,
@@ -12,10 +10,6 @@ _k_friendly_name=Keyboard Layout Switcher
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
-
-[khotkeys]
-_k_friendly_name=Custom Shortcuts Service
-{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -53,7 +47,6 @@ Grid View=Meta+G,Meta+G,Toggle Grid View
 Increase Opacity=,,Increase Opacity of Active Window by 5%
 Kill Window=Meta+Ctrl+Esc,Meta+Ctrl+Esc,Kill Window
 Move Tablet to Next LogicalOutput=none,none,Move the tablet to the next output
-Move Tablet to Next Output=none,none,Move the tablet to the next output
 MoveMouseToCenter=Meta+F6,Meta+F6,Move Mouse to Center
 MoveMouseToFocus=Meta+F5,Meta+F5,Move Mouse to Focus
 MoveZoomDown=none,none,Move Zoomed Area Downwards
@@ -63,8 +56,6 @@ MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
 Setup Window Shortcut=,,Setup Window Shortcut
 Show Desktop=Meta+D,Meta+D,Peek at Desktop
-ShowDesktopGrid=Meta+F8,Meta+F8,Show Desktop Grid
-Suspend Compositing=Alt+Shift+F12,Alt+Shift+F12,Suspend Compositing
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Switch One Desktop Down
 Switch One Desktop Up=Meta+Ctrl+Up,Meta+Ctrl+Up,Switch One Desktop Up
 Switch One Desktop to the Left=Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left
@@ -73,7 +64,7 @@ Switch Window Down=Meta+Alt+Down,Meta+Alt+Down,Switch to Window Below
 Switch Window Left=Meta+Alt+Left,Meta+Alt+Left,Switch to Window to the Left
 Switch Window Right=Meta+Alt+Right,Meta+Alt+Right,Switch to Window to the Right
 Switch Window Up=Meta+Alt+Up,Meta+Alt+Up,Switch to Window Above
-Switch to Desktop 1=Ctrl+F1,Meta+F1\tCtrl+F1,Switch to Desktop 1
+Switch to Desktop 1=Meta+F1\tCtrl+F1,Meta+F1\tCtrl+F1,Switch to Desktop 1
 Switch to Desktop 10=,,Switch to Desktop 10
 Switch to Desktop 11=,,Switch to Desktop 11
 Switch to Desktop 12=,,Switch to Desktop 12
@@ -84,15 +75,15 @@ Switch to Desktop 16=,,Switch to Desktop 16
 Switch to Desktop 17=,,Switch to Desktop 17
 Switch to Desktop 18=,,Switch to Desktop 18
 Switch to Desktop 19=,,Switch to Desktop 19
-Switch to Desktop 2=Ctrl+F2,Meta+F2\tCtrl+F2,Switch to Desktop 2
+Switch to Desktop 2=Meta+F2\tCtrl+F2,Meta+F2\tCtrl+F2,Switch to Desktop 2
 Switch to Desktop 20=,,Switch to Desktop 20
 Switch to Desktop 21=,,Switch to Desktop 21
 Switch to Desktop 22=,,Switch to Desktop 22
 Switch to Desktop 23=,,Switch to Desktop 23
 Switch to Desktop 24=,,Switch to Desktop 24
 Switch to Desktop 25=,,Switch to Desktop 25
-Switch to Desktop 3=Ctrl+F3,Meta+F3\tCtrl+F3,Switch to Desktop 3
-Switch to Desktop 4=Ctrl+F4,Meta+F4\tCtrl+F4,Switch to Desktop 4
+Switch to Desktop 3=Meta+F3\tCtrl+F3,Meta+F3\tCtrl+F3,Switch to Desktop 3
+Switch to Desktop 4=Meta+F4\tCtrl+F4,Meta+F4\tCtrl+F4,Switch to Desktop 4
 Switch to Desktop 5=,,Switch to Desktop 5
 Switch to Desktop 6=,,Switch to Desktop 6
 Switch to Desktop 7=,,Switch to Desktop 7
@@ -116,10 +107,6 @@ Switch to Screen to the Left=,,Switch to Screen to the Left
 Switch to Screen to the Right=,,Switch to Screen to the Right
 Toggle Night Color=none,none,Suspend/Resume Night Light
 Toggle Window Raise/Lower=,,Toggle Window Raise/Lower
-Walk Through Desktop List=none,,Walk Through Desktop List
-Walk Through Desktop List (Reverse)=none,,Walk Through Desktop List (Reverse)
-Walk Through Desktops=none,,Walk Through Desktops
-Walk Through Desktops (Reverse)=none,,Walk Through Desktops (Reverse)
 Walk Through Windows=Meta+Tab\tAlt+Tab,Meta+Tab\tAlt+Tab,Walk Through Windows
 Walk Through Windows (Reverse)=Meta+Shift+Tab\tAlt+Shift+Tab,Meta+Shift+Tab\tAlt+Shift+Tab,Walk Through Windows (Reverse)
 Walk Through Windows Alternative=none,none,Walk Through Windows Alternative
@@ -170,7 +157,6 @@ Window Quick Tile Top Left=,,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=,,Quick Tile Window to the Top Right
 Window Raise=,,Raise Window
 Window Resize=,,Resize Window
-Window Shade=,,Shade Window
 Window Shrink Horizontal=,,Shrink Window Horizontally
 Window Shrink Vertical=,,Shrink Window Vertically
 Window to Desktop 1=,,Window to Desktop 1
@@ -261,19 +247,6 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
-activate widget 122=none,none,Activate Application Launcher Widget
-activate widget 153=none,none,Activate Task Manager Widget
-activate widget 156=none,none,Activate Application Launcher Widget
-activate widget 180=none,none,Activate Application Launcher Widget
-activate widget 182=none,none,Activate Icons-only Task Manager Widget
-activate widget 185=none,none,Activate System Tray Widget
-activate widget 237=Meta+F4,none,Activate Lock/Logout Widget
-activate widget 238=none,none,Activate Application Menu Widget
-activate widget 28=none,none,Activate Application Launcher Widget
-activate widget 3=,none,Activate Application Launcher Widget
-activate widget 51=none,none,Activate Application Launcher Widget
-activate widget 74=none,none,Activate Application Launcher Widget
-activate widget 98=none,none,Activate Application Launcher Widget
 clear-history=,,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels
@@ -287,43 +260,15 @@ repeat_action=,,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=,,Show Barcode…
 show-on-mouse-pos=Meta+V,Meta+V,Show Clipboard Items at Mouse Position
-stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=,,Switch to Next Activity
 switch to previous activity=,,Switch to Previous Activity
 toggle do not disturb=,,Toggle do not disturb
 
-[services][firefox.desktop]
-_launch=Meta+F
-
-[services][google-chrome.desktop]
-_launch=Meta+G
-
-[services][md.obsidian.Obsidian.desktop]
-_launch=Meta+O
-
-[services][microsoft-edge.desktop]
-_launch=Meta+E
-
-[services][node.desktop]
-_launch=Ctrl+L
-
-[services][org.kde.dolphin.desktop]
-_launch=none
-
-[services][org.kde.kinfocenter.desktop]
-_launch=Meta+I
-
 [services][org.kde.konsole.desktop]
 _launch=Meta+Return
 
-[services][org.kde.krunner.desktop]
-_launch=Meta+R\tAlt+Space\tAlt+F2\tSearch
-
 [services][org.kde.spectacle.desktop]
-RecordRegion=Meta+Shift+R\t
-
-[services][systemsettings.desktop]
-_launch=Tools\t
-
-[services][thunderbird.desktop]
-_launch=Meta+M
+CurrentMonitorScreenShot=
+OpenWithoutScreenshot=
+RectangularRegionScreenShot=
+_launch=Meta+Shift+S
