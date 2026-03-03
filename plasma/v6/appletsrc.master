@@ -1,4 +1,4 @@
-# Captured from lenovopc on Tue Mar  3 09:59:28 AM PST 2026
+# Captured from lenovopc on Tue Mar  3 01:28:46 PM PST 2026
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -18,7 +18,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260303_095705.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260303_102609.jpg
 
 [Containments][2]
 activityId=563d5848-eadb-45b9-beca-bd09198cce0f
@@ -34,7 +34,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=preferred://filemanager,preferred://browser
+launchers=preferred://filemanager,preferred://browser,applications:org.mozilla.Thunderbird.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -134,6 +134,10 @@ plugin=org.kde.plasma.brightness
 immutability=1
 plugin=org.kde.plasma.battery
 
+[Containments][26][Applets][31][Applets][56]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
 [Containments][26][Applets][31][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
@@ -157,7 +161,7 @@ plugin=org.kde.plasma.kicker
 
 [Containments][26][Applets][50][Configuration]
 popupHeight=438
-popupWidth=312
+popupWidth=1311
 
 [Containments][26][Applets][50][Configuration][General]
 favoritesPortedToKAstats=true
@@ -186,6 +190,9 @@ plugin=org.kde.plasma.timer
 [Containments][26][Applets][54][Configuration]
 popupHeight=400
 popupWidth=560
+
+[Containments][26][Applets][54][Configuration][General]
+savedAt=2026,3,3,11,5,8.246
 
 [Containments][26][Applets][55]
 immutability=1
