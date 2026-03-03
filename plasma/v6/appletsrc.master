@@ -1,4 +1,4 @@
-# Captured from lenovopc on Tue Mar  3 09:28:15 AM PST 2026
+# Captured from lenovopc on Tue Mar  3 09:59:28 AM PST 2026
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -18,7 +18,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260303_092245.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260303_095705.jpg
 
 [Containments][2]
 activityId=563d5848-eadb-45b9-beca-bd09198cce0f
@@ -157,7 +157,7 @@ plugin=org.kde.plasma.kicker
 
 [Containments][26][Applets][50][Configuration]
 popupHeight=438
-popupWidth=996
+popupWidth=312
 
 [Containments][26][Applets][50][Configuration][General]
 favoritesPortedToKAstats=true
@@ -179,8 +179,23 @@ plugin=org.kde.plasma.pager
 immutability=1
 plugin=org.kde.plasma.panelspacer
 
+[Containments][26][Applets][54]
+immutability=1
+plugin=org.kde.plasma.timer
+
+[Containments][26][Applets][54][Configuration]
+popupHeight=400
+popupWidth=560
+
+[Containments][26][Applets][55]
+immutability=1
+plugin=org.kde.plasma.lock_logout
+
+[Containments][26][Applets][55][Configuration][General]
+actionsOrder=lockScreen,switchUser,requestShutDown,requestReboot,requestLogout,requestLogoutScreen,suspendToRam,suspendToDisk
+
 [Containments][26][General]
-AppletOrder=50;49;52;53;30;31;51;48
+AppletOrder=50;49;52;53;54;30;31;51;48;55
 
 [ScreenMapping]
 itemsOnDisabledScreens=
