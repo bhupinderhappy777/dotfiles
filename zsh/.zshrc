@@ -1,4 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
+# Ensure the pip-installed binaries are prioritized
+export PATH="/usr/local/bin:$PATH"
 ZSH_THEME=""
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting autoswitch_virtualenv zsh-history-substring-search)
 source $ZSH/oh-my-zsh.sh
