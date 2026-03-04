@@ -1,0 +1,6 @@
+{
+          "dev.containers.dockerPath": "podman",
+          "docker.dockerPath": "podman",
+          "dev.containers.executeInRootlessContainer": true,
+          "terminal.integrated.defaultProfile.linux": "zsh"
+      }

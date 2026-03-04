@@ -55,3 +55,4 @@ alias urdp='ufv_connect'
 
 # Add Flatpak binaries to PATH
 export PATH=$PATH:/var/lib/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin
+export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
