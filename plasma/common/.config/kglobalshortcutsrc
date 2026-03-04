@@ -273,5 +273,5 @@ _launch=Meta+Return
 [services][org.kde.spectacle.desktop]
 CurrentMonitorScreenShot=
 OpenWithoutScreenshot=
-RectangularRegionScreenShot=
+RectangularRegionScreenShot=Print
 _launch=Meta+Shift+S
