@@ -23,5 +23,6 @@
     // SET THIS TO THE CONTAINER PROFILE TO PREVENT STARTUP ERRORS
     "terminal.integrated.defaultProfile.linux": "zsh (container)",
     "redhat.telemetry.enabled": true,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "terminal.integrated.copyOnSelection": true
 }
