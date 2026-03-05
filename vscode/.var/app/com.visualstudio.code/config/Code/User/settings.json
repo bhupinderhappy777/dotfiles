@@ -24,5 +24,8 @@
     "terminal.integrated.defaultProfile.linux": "zsh (container)",
     "redhat.telemetry.enabled": true,
     "git.autofetch": true,
-    "terminal.integrated.copyOnSelection": true
+    "terminal.integrated.copyOnSelection": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveWhenNoErrors": true,
+    "files.autoSaveWorkspaceFilesOnly": true
 }

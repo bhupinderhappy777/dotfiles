@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 # Ensure the pip-installed binaries are prioritized
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.local/bin:$PATH"
+export PATH="/opt/oci/bin/:$PATH"
 ZSH_THEME=""
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting autoswitch_virtualenv zsh-history-substring-search)
 source $ZSH/oh-my-zsh.sh
@@ -8,9 +9,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
-
-# Starship Initialization
-eval "$(starship init zsh)"
 
 # Starship Initialization
 eval "$(starship init zsh)"
@@ -54,6 +52,9 @@ alias av='withvault ansible-vault'
 
 # To connect to ufv lab
 alias urdp='ufv_connect'
+
+# Alias for vscode
+alias code='flatpak run com.visualstudio.code'
 
 # Add Flatpak binaries to PATH
 export PATH=$PATH:/var/lib/flatpak/exports/bin:$HOME/.local/share/flatpak/exports/bin
