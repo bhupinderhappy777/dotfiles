@@ -65,6 +65,7 @@ if [ ! -d "$HOME/.gemini/bin" ]; then mkdir -p "$HOME/.gemini/bin"; fi
 
 alias gemini='podman run --rm -it \
   --userns=keep-id \
+  --name=gemini-cli \
   --net=host \
   --env="TERM=xterm-256color" \
   -v "$HOME/.gemini:/home/node/.gemini:Z" \
