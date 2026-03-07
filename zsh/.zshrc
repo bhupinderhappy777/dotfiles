@@ -70,7 +70,7 @@ alias gemini='podman run --rm -it \
   --env="TERM=xterm-256color" \
   -v "$HOME/.gemini:/home/node/.gemini:Z" \
   -v "$HOME/.gemini/bin:/home/node/.npm:Z" \
-  -v "$(pwd):/home/node/project" \
+  -v "$(pwd):/home/node/project:z" \
   -w /home/node/project \
   node:20-slim \
   npx @google/gemini-cli'
