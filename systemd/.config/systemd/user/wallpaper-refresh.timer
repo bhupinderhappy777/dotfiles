@@ -1,11 +1,14 @@
 [Unit]
 Description=Wallpaper refresh 30s after login + daily 3am
-Requires=wallpaper-refresh.service
 
 [Timer]
+# Trigger 30 seconds after the timer unit itself starts (login)
+OnActiveSec=30s
+# Trigger every 30 minutes thereafter
 OnUnitActiveSec=30m
+# Trigger at 3am daily
 OnCalendar=*-*-* 03:00:00
 Persistent=true
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=timers.target

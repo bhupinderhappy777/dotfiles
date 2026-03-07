@@ -27,5 +27,7 @@
     "terminal.integrated.copyOnSelection": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveWhenNoErrors": true,
-    "files.autoSaveWorkspaceFilesOnly": true
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.podmancompose"
 }
