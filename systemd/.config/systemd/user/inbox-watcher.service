@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash /home/bhupi/dotfiles/scripts/process_inbox.sh --watch
+ExecStart=/bin/bash %h/dotfiles/scripts/process_inbox.sh --watch
 Restart=on-failure
 RestartSec=10
 
