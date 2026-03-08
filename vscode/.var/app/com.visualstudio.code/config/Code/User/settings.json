@@ -1,0 +1,33 @@
+{
+    "dev.containers.dockerPath": "/home/bhupi/.local/bin/docker",
+    "docker.dockerPath": "/home/bhupi/.local/bin/docker",
+    "docker.host": "unix:///run/user/1000/podman/podman.sock",
+    "dev.containers.executeInRootlessContainer": true,
+    "terminal.integrated.profiles.linux": {
+        "zsh (host)": {
+            "path": "/usr/bin/flatpak-spawn",
+            "args": [
+                "--host",
+                "--clear-env",
+                "--env=TERM=xterm-256color",
+                "/usr/bin/zsh",
+                "-l"
+            ],
+            "overrideName": true
+        },
+        "zsh (container)": {
+            "path": "/usr/bin/zsh", // This exists inside your Fedora 41 image
+            "args": ["-l"]
+        }
+    },
+    // SET THIS TO THE CONTAINER PROFILE TO PREVENT STARTUP ERRORS
+    "terminal.integrated.defaultProfile.linux": "zsh (container)",
+    "redhat.telemetry.enabled": true,
+    "git.autofetch": true,
+    "terminal.integrated.copyOnSelection": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveWhenNoErrors": true,
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.podmancompose"
+}
