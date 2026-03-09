@@ -18,3 +18,15 @@ plasma/
 
 # Runtime-mutated KDE files (managed by scripts/apps at runtime)
 dot_config/kscreenlockerrc.tmpl
+
+# Legacy pre-chezmoi module layout (kept in repo for reference only)
+audacity/
+doublecmd/
+git/
+konsole/
+systemd/
+vscode/
+zsh/
+
+# Local migration helper script (not a target file)
+migrate_to_chezmoi.sh
