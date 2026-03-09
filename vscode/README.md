@@ -5,25 +5,18 @@ VS Code configuration for the **Flatpak** installation (`com.visualstudio.code`)
 ## Structure
 
 ```
-vscode/
-└── .var/app/com.visualstudio.code/    ← mirrors ~/.var/app/com.visualstudio.code/
-    └── config/Code/User/
-        ├── settings.json              ← Editor preferences
-        └── keybindings.json           ← Custom keyboard shortcuts
+dot_var/app/com.visualstudio.code/config/Code/User/  ← chezmoi-managed canonical path
+vscode/.var/app/com.visualstudio.code/config/Code/User/ ← legacy source copy
 ```
 
 ## Installation
 
 ```bash
-# Ensure the Flatpak VS Code data directory exists
-mkdir -p ~/.var/app/com.visualstudio.code/config/Code/User
+# Apply managed files
+chezmoi apply
 
-# Symlink settings
-ln -sf ~/dotfiles/vscode/.var/app/com.visualstudio.code/config/Code/User/settings.json \
-       ~/.var/app/com.visualstudio.code/config/Code/User/settings.json
-
-ln -sf ~/dotfiles/vscode/.var/app/com.visualstudio.code/config/Code/User/keybindings.json \
-       ~/.var/app/com.visualstudio.code/config/Code/User/keybindings.json
+# Edit the managed file
+chezmoi edit ~/.var/app/com.visualstudio.code/config/Code/User/settings.json
 ```
 
 ## Notes

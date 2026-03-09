@@ -13,14 +13,16 @@ doublecmd/
 ## Installation
 
 ```bash
-ln -sf ~/dotfiles/doublecmd/.config/doublecmd ~/.config/doublecmd
-```
+# This module is currently kept in legacy layout.
+# To migrate it into chezmoi, add files from your live config:
+chezmoi add ~/.config/doublecmd/doublecmd.xml
+chezmoi add ~/.config/doublecmd/shortcuts.scf
+chezmoi add ~/.config/doublecmd/colors.json
+chezmoi add ~/.config/doublecmd/multiarc.ini
 
-Or to symlink only the config file:
-
-```bash
+# Or apply manually from this module:
 mkdir -p ~/.config/doublecmd
-ln -sf ~/dotfiles/doublecmd/.config/doublecmd/doublecmd.xml ~/.config/doublecmd/doublecmd.xml
+cp ./doublecmd/.config/doublecmd/* ~/.config/doublecmd/
 ```
 
 ## What is Stored

@@ -1,6 +1,6 @@
 {
-    "dev.containers.dockerPath": "/home/bhupi/.local/bin/docker",
-    "docker.dockerPath": "/home/bhupi/.local/bin/docker",
+    "dev.containers.dockerPath": "{{ .chezmoi.homeDir }}/.local/bin/docker",
+    "docker.dockerPath": "{{ .chezmoi.homeDir }}/.local/bin/docker",
     "docker.host": "unix:///run/user/1000/podman/podman.sock",
     "dev.containers.executeInRootlessContainer": true,
     "terminal.integrated.profiles.linux": {

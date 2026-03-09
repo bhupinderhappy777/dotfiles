@@ -13,14 +13,13 @@ audacity/
 ## Installation
 
 ```bash
-ln -sf ~/dotfiles/audacity/.config/audacity ~/.config/audacity
-```
+# This module is currently kept in legacy layout.
+# To migrate it into chezmoi, add it from your live config:
+chezmoi add ~/.config/audacity/audacity.cfg
 
-Or to symlink only the preferences file:
-
-```bash
+# Or use the existing file manually:
 mkdir -p ~/.config/audacity
-ln -sf ~/dotfiles/audacity/.config/audacity/audacity.cfg ~/.config/audacity/audacity.cfg
+cp ./audacity/.config/audacity/audacity.cfg ~/.config/audacity/audacity.cfg
 ```
 
 ## Notes

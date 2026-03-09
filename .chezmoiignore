@@ -1,0 +1,20 @@
+# Ignore files that should not be managed by chezmoi
+README.md
+GEMINI.md
+.git/
+.gitignore
+
+# Module-specific README files
+**/README.md
+
+# Plasma layout master files (not deployed directly)
+plasma/*/appletsrc.master
+
+# Scripts that live in the repo, not in $HOME
+scripts/
+
+# Plasma directory itself (contents managed individually)
+plasma/
+
+# Runtime-mutated KDE files (managed by scripts/apps at runtime)
+dot_config/kscreenlockerrc.tmpl

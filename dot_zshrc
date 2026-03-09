@@ -35,7 +35,7 @@ ufv_connect() {
         return 1
     fi
 
-    echo " Connecting to UFV Desktop..."
+    echo " Connecting to UFV Desktop..."
 # FreeRDP 3.x Unified Gateway Syntax
     xfreerdp /v:AA353W2508 \
              /u:300140363 /d:AD-UFV /p:"$PASS" \

@@ -40,12 +40,13 @@ Managed as user services (`systemctl --user`):
 *   **`gemini`**: An alias to run the Gemini CLI inside a Podman container for a clean, dependency-free environment.
 
 ## Building and Running
-As a dotfiles project, "building" typically involves symlinking or copying files.
-*   **TODO**: Implement or document a top-level installation script (e.g., `install.sh` or a GNU Stow setup).
-*   **Deployment**: 
-    1.  Copy/Symlink `systemd/.config/systemd/user/*` to `~/.config/systemd/user/`.
-    2.  Reload and start services: `systemctl --user daemon-reload && systemctl --user enable --now inbox-watcher.service wallpaper-refresh.timer`.
-    3.  Apply Plasma layout: `./plasma/v[5|6]/apply_layout.sh`.
+As a dotfiles project, deployment is handled by **chezmoi**.
+*   **Initial setup**: `chezmoi init --apply https://github.com/bhupinderhappy777/dotfiles.git`
+*   **Update + apply**: `chezmoi update` (or `chezmoi git pull && chezmoi apply`)
+*   **Deployment flow**:
+    1.  Chezmoi deploys managed files from `dot_*` paths to `$HOME`.
+    2.  `.chezmoiscripts` installs shell prerequisites and enables systemd user services.
+    3.  Plasma layout is applied via `plasma/v[5|6]/apply_layout.sh` using the detected Plasma version.
 
 ## Development Conventions
 *   **Bash Safety**: Scripts use `set -euo pipefail` where appropriate.

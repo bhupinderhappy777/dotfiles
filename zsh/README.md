@@ -10,17 +10,30 @@ Zsh shell configuration built on **Oh My Zsh** with the **Starship** cross-shell
 
 ## Installation
 
+**Automatic (via chezmoi):**
 ```bash
-# Prerequisites
+# Everything is handled automatically when you run:
+chezmoi init --apply https://github.com/bhupinderhappy777/dotfiles.git
+
+# The setup script (.chezmoiscripts/run_once_before_install-shell.sh) will:
+# - Install Oh My Zsh if not present
+# - Install Starship prompt
+# - Clone zsh-autosuggestions plugin
+# - Clone zsh-syntax-highlighting plugin
+# - Deploy .zshrc to ~/.zshrc
+```
+
+**Manual prerequisites (if chezmoi scripts didn't run):**
+```bash
+# Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Starship prompt
 curl -sS https://starship.rs/install.sh | sh
 
 # Optional plugins (placed in $ZSH_CUSTOM/plugins/)
 git clone https://github.com/zsh-users/zsh-autosuggestions    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# Symlink the config
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 ```
 
 ## Oh My Zsh Plugins

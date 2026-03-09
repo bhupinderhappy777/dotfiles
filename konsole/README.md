@@ -5,19 +5,18 @@ Konsole terminal emulator configuration — profiles and colour schemes.
 ## Structure
 
 ```
-konsole/
-└── .local/share/        ← mirrors ~/.local/share/
-    └── konsole/         ← Konsole profiles and colour scheme files
+dot_local/share/konsole/         ← chezmoi-managed canonical path
+konsole/.local/share/konsole/    ← legacy source copy
 ```
 
 ## Installation
 
 ```bash
-# Symlink the entire share directory (recommended)
-ln -sf ~/dotfiles/konsole/.local/share/konsole ~/.local/share/konsole
+# Apply managed files
+chezmoi apply
 
-# Or copy individual files
-cp ~/dotfiles/konsole/.local/share/konsole/* ~/.local/share/konsole/
+# Edit the managed profile
+chezmoi edit ~/.local/share/konsole/my_profile.profile
 ```
 
 ## Notes
@@ -25,4 +24,4 @@ cp ~/dotfiles/konsole/.local/share/konsole/* ~/.local/share/konsole/
 - Profile files have a `.profile` extension and are referenced by name in Konsole's settings.
 - Colour scheme files have a `.colorscheme` extension.
 - The active profile is configured in `plasma/common/.config/konsolerc`.
-- After symlinking, restart Konsole or reload the profile from **Settings → Manage Profiles** for changes to take effect.
+- After applying changes, restart Konsole or reload the profile from **Settings → Manage Profiles** for changes to take effect.

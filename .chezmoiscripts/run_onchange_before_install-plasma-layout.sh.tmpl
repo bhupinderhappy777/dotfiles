@@ -1,0 +1,16 @@
+#!/bin/bash
+# This script runs whenever the Plasma layout changes
+# It applies the appropriate Plasma layout based on the detected version
+
+set -euo pipefail
+
+PLASMA_VERSION="{{ .plasma_version }}"
+SCRIPT_DIR="{{ .chezmoi.sourceDir }}/plasma/v${PLASMA_VERSION}"
+
+if [[ ! -f "${SCRIPT_DIR}/apply_layout.sh" ]]; then
+    echo "Warning: Plasma v${PLASMA_VERSION} layout script not found at ${SCRIPT_DIR}"
+    exit 0
+fi
+
+echo "Applying Plasma ${PLASMA_VERSION} layout..."
+bash "${SCRIPT_DIR}/apply_layout.sh"

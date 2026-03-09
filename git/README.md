@@ -10,8 +10,23 @@ Global Git configuration.
 
 ## Installation
 
+**Automatic (via chezmoi):**
 ```bash
-ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+# Deployed automatically when you run:
+chezmoi apply
+
+# The file is stored as dot_gitconfig in the chezmoi source directory
+# and deployed to ~/.gitconfig
+```
+
+**Manual edit:**
+```bash
+# Edit using chezmoi
+chezmoi edit ~/.gitconfig
+chezmoi apply
+
+# Or edit directly (changes will be detected on next chezmoi diff)
+vim ~/.gitconfig
 ```
 
 ## Configuration Details

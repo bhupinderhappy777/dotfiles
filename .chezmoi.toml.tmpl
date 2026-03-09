@@ -1,0 +1,13 @@
+# chezmoi configuration file
+# https://www.chezmoi.io/reference/configuration-file/
+
+[data]
+    # Detect Plasma version (5 or 6)
+    plasma_version = "{{ output "sh" "-c" "plasmashell --version 2>/dev/null | grep -oP '\\d+' | head -1 || echo 6" | trim }}"
+
+[edit]
+    command = "code"
+    args = ["--wait"]
+
+[diff]
+    pager = "less"

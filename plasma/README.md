@@ -44,10 +44,10 @@ bash ~/dotfiles/plasma/v5/apply_layout.sh
 
 > After `apply_layout.sh` runs, `plasmashell` is automatically restarted. The screen will go black briefly and the desktop will reload.
 
-## Shared KDE Configs (`common/.config/`)
+## Shared KDE Configs (`dot_config/`)
 
 These files are version-agnostic and work with both Plasma 5 and Plasma 6.
-Symlink them (or copy them) to `~/.config/`.
+They are managed by chezmoi and deployed to `~/.config/`.
 
 | File | Controls |
 |---|---|
@@ -58,9 +58,7 @@ Symlink them (or copy them) to `~/.config/`.
 | `konsolerc` | Default Konsole terminal profile |
 | `kwalletrc` | KWallet daemon settings |
 
-### Symlinking the common configs
+### Applying with chezmoi
 ```bash
-for f in ~/dotfiles/plasma/common/.config/*; do
-    ln -sf "$f" ~/.config/$(basename "$f")
-done
+chezmoi apply
 ```

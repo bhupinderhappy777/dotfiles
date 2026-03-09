@@ -12,7 +12,7 @@ Runs `process_inbox.sh --watch` as a long-lived background process.
 |---|---|
 | Type | `simple` |
 | Restart | `on-failure` (10 s delay) |
-| Script | `~/dotfiles/scripts/process_inbox.sh --watch` |
+| Script | `{{ .chezmoi.sourceDir }}/scripts/process_inbox.sh --watch` |
 
 ### `wallpaper-refresh.service`
 
@@ -22,7 +22,7 @@ One-shot service that runs `wallpaper_wallhaven.sh` once and exits.
 |---|---|
 | Type | `oneshot` |
 | Requires network | Yes (`After=network-online.target`) |
-| Script | `~/dotfiles/scripts/wallpaper_wallhaven.sh` |
+| Script | `{{ .chezmoi.sourceDir }}/scripts/wallpaper_wallhaven.sh` |
 
 ### `wallpaper-refresh.timer`
 
@@ -37,16 +37,26 @@ Activates `wallpaper-refresh.service` on a schedule.
 
 ## Installation
 
+**Automatic (via chezmoi):**
 ```bash
-# Symlink units into the user systemd directory
-mkdir -p ~/.config/systemd/user
+# Services are automatically deployed and enabled when you run:
+chezmoi apply
 
-ln -sf ~/dotfiles/systemd/.config/systemd/user/inbox-watcher.service     ~/.config/systemd/user/
-ln -sf ~/dotfiles/systemd/.config/systemd/user/wallpaper-refresh.service ~/.config/systemd/user/
-ln -sf ~/dotfiles/systemd/.config/systemd/user/wallpaper-refresh.timer   ~/.config/systemd/user/
+# The .chezmoiscripts/run_onchange_after_setup-systemd.sh script handles:
+# - Reloading systemd user daemon
+# - Enabling and starting inbox-watcher.service
+# - Enabling and starting wallpaper-refresh.timer
+```
 
-# Reload the daemon and enable/start the units
+**Manual installation (if needed):**
+```bash
+# Files are stored in chezmoi's source directory:
+# ~/.local/share/chezmoi/dot_config/systemd/user/
+
+# Reload the daemon (chezmoi does this automatically)
 systemctl --user daemon-reload
+
+# Enable and start services
 systemctl --user enable --now inbox-watcher.service wallpaper-refresh.timer
 ```
 
@@ -73,8 +83,6 @@ systemctl --user disable --now inbox-watcher.service wallpaper-refresh.timer
 
 ## Notes
 
-- The `wallpaper-refresh.service` file currently has a hard-coded home directory path (`/home/bhupi/`). Replace it with the systemd `%h` home-directory specifier for portability across different user accounts:
-  ```ini
-  ExecStart=/bin/bash %h/dotfiles/scripts/wallpaper_wallhaven.sh
-  ```
-- Units are stored under `systemd/.config/systemd/user/` in the repo (mirroring the `~/.config/systemd/user/` target path) so that a dotfiles manager like GNU Stow can deploy them directly.
+- The systemd unit files are templates and use `{{ .chezmoi.sourceDir }}` so script paths remain portable across user accounts.
+- Services are managed by chezmoi and automatically deployed to `~/.config/systemd/user/` when you run `chezmoi apply`.
+- The `.chezmoiscripts/run_onchange_after_setup-systemd.sh` script automatically enables and starts the services after deployment.

@@ -36,6 +36,7 @@ This repository stores every configuration file and automation script needed to 
 
 | Area | Tool |
 |---|---|
+| Dotfiles Manager | **chezmoi** |
 | Desktop Environment | KDE Plasma 5 & 6 |
 | Shell | Zsh · Oh My Zsh · Starship |
 | Secret Management | KWallet (`kwallet-query`) |
@@ -53,54 +54,50 @@ dotfiles/
 ├── README.md                    ← You are here
 ├── GEMINI.md                    ← Context file for Gemini AI agent
 ├── .gitignore
+├── .chezmoiignore               ← Files chezmoi should not manage
+├── .chezmoi.toml.tmpl           ← chezmoi configuration (auto-detects Plasma version)
+├── .chezmoiscripts/             ← Automation scripts for chezmoi apply
+│   ├── run_once_before_install-shell.sh
+│   ├── run_onchange_before_install-plasma-layout.sh.tmpl
+│   └── run_onchange_after_setup-systemd.sh
 │
-├── plasma/                      ← KDE Plasma layout management
-│   ├── common/                  ← Shared KDE config files (theme, shortcuts, kwin)
-│   │   └── .config/
-│   │       ├── kdeglobals       ← Breeze Dark colour scheme
-│   │       ├── kglobalshortcutsrc
-│   │       ├── konsolerc
-│   │       ├── kscreenlockerrc
-│   │       ├── kwalletrc
-│   │       └── kwinrc
+├── dot_config/                  ← Managed config files (~/.config/)
+│   ├── kdeglobals               ← Breeze Dark colour scheme
+│   ├── kglobalshortcutsrc       ← KDE keyboard shortcuts
+│   ├── konsolerc                ← Konsole terminal settings
+│   ├── kwalletrc                ← KWallet configuration
+│   ├── kwinrc                   ← KWin window manager settings
+│   ├── starship.toml            ← Starship prompt config
+│   ├── systemd/user/            ← Systemd user services
+│   │   ├── inbox-watcher.service
+│   │   ├── wallpaper-refresh.service.tmpl
+│   │   └── wallpaper-refresh.timer
+│   └── (core KDE/systemd/shell files)
+│
+├── dot_gitconfig                ← Git global config (~/.gitconfig)
+├── dot_zshrc                    ← Zsh shell config (~/.zshrc)
+├── dot_local/share/konsole/     ← Konsole profiles (~/.local/share/konsole/)
+├── dot_var/app/.../Code/User/   ← VS Code Flatpak settings
+│
+├── audacity/                    ← Legacy app configs (to be migrated to `dot_config/`)
+├── doublecmd/                   ← Legacy app configs (to be migrated to `dot_config/`)
+├── konsole/                     ← Legacy source copy
+├── vscode/                      ← Legacy source copy
+│
+├── plasma/                      ← KDE Plasma layout management (not deployed directly)
 │   ├── v5/                      ← Plasma 5-specific layout scripts
 │   │   ├── appletsrc.master     ← Saved panel/widget layout (template)
 │   │   ├── apply_layout.sh      ← Deploy layout, patching the Activity ID
-│   │   └── harvest_layout.sh   ← Back up current layout to this repo
+│   │   └── harvest_layout.sh    ← Back up current layout to this repo
 │   └── v6/                      ← Plasma 6-specific layout scripts
 │       ├── appletsrc.master
 │       ├── apply_layout.sh
 │       └── harvest_layout.sh
 │
-├── scripts/                     ← Standalone automation scripts
-│   ├── process_inbox.sh         ← Sort ~/Inbox_Folder into ~/Documents, ~/Pictures, etc.
-│   ├── wallpaper_wallhaven.sh   ← Fetch & apply a random 4K wallpaper from Wallhaven
-│   └── update_sddm_wallpaper.sh ← Sync SDDM login screen to the current wallpaper
-│
-├── systemd/                     ← Systemd user service & timer units
-│   └── .config/systemd/user/
-│       ├── inbox-watcher.service
-│       ├── wallpaper-refresh.service
-│       └── wallpaper-refresh.timer
-│
-├── zsh/                         ← Zsh shell configuration
-│   ├── .zshrc                   ← Main shell config (aliases, functions, PATH)
-│   └── .config/                 ← Additional Zsh-related configs
-│
-├── git/
-│   └── .gitconfig               ← Global Git identity
-│
-├── konsole/
-│   └── .local/share/            ← Konsole terminal profiles & colour schemes
-│
-├── vscode/
-│   └── .var/app/                ← VS Code (Flatpak) settings & keybindings
-│
-├── audacity/
-│   └── .config/audacity/        ← Audacity preferences
-│
-└── doublecmd/
-    └── .config/doublecmd/       ← Double Commander configuration
+└── scripts/                     ← Standalone automation scripts (not deployed)
+    ├── process_inbox.sh         ← Sort ~/Inbox_Folder into ~/Documents, ~/Pictures, etc.
+    ├── wallpaper_wallhaven.sh   ← Fetch & apply a random 4K wallpaper from Wallhaven
+    └── update_sddm_wallpaper.sh ← Sync SDDM login screen to the current wallpaper
 ```
 
 ---
@@ -111,26 +108,25 @@ Install these packages before running the setup scripts.
 
 ### Arch / Manjaro
 ```bash
-sudo pacman -S zsh inotify-tools curl jq podman freerdp
+sudo pacman -S zsh inotify-tools curl jq podman freerdp chezmoi
 ```
 
 ### Fedora
 ```bash
-sudo dnf install zsh inotify-tools curl jq podman freerdp
+sudo dnf install zsh inotify-tools curl jq podman freerdp chezmoi
 ```
 
 ### Ubuntu / Debian
 ```bash
 sudo apt install zsh inotify-tools curl jq podman freerdp2-x11
+# Install chezmoi (not in default repos)
+sh -c "$(curl -fsLS get.chezmoi.io)"
 ```
 
 ### All distributions — additional setup
 ```bash
-# Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Starship prompt
-curl -sS https://starship.rs/install.sh | sh
+# Oh My Zsh (installed automatically by chezmoi on first apply)
+# Starship prompt (installed automatically by chezmoi on first apply)
 
 # VS Code via Flatpak (if not using the native package)
 flatpak install flathub com.visualstudio.code
@@ -141,36 +137,56 @@ flatpak install flathub com.visualstudio.code
 ## Quick Installation
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/bhupinderhappy777/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+# 1. Install chezmoi and initialize with this repository
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/bhupinderhappy777/dotfiles.git
 
-# 2. Symlink Zsh config
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-
-# 3. Symlink Git config
-ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
-
-# 4. Symlink KDE common configs
-for f in ~/dotfiles/plasma/common/.config/*; do
-    ln -sf "$f" ~/.config/$(basename "$f")
-done
-
-# 5. Install systemd services
-mkdir -p ~/.config/systemd/user
-ln -sf ~/dotfiles/systemd/.config/systemd/user/inbox-watcher.service     ~/.config/systemd/user/
-ln -sf ~/dotfiles/systemd/.config/systemd/user/wallpaper-refresh.service ~/.config/systemd/user/
-ln -sf ~/dotfiles/systemd/.config/systemd/user/wallpaper-refresh.timer   ~/.config/systemd/user/
-
-systemctl --user daemon-reload
-systemctl --user enable --now inbox-watcher.service wallpaper-refresh.timer
-
-# 6. Apply the Plasma layout (choose your version)
-bash ~/dotfiles/plasma/v6/apply_layout.sh   # Plasma 6
-# bash ~/dotfiles/plasma/v5/apply_layout.sh # Plasma 5
+# That's it! chezmoi will:
+# - Clone the repository to ~/.local/share/chezmoi
+# - Install Oh My Zsh and Starship (first run only)
+# - Deploy all config files to their proper locations
+# - Apply the Plasma layout for your version (5 or 6)
+# - Enable and start systemd user services
 ```
 
-> **Tip:** After running step 6, log out and back in (or restart plasmashell) for the layout to take full effect.
+**What happens on first run:**
+- Oh My Zsh and Starship are installed automatically
+- Zsh plugins (autosuggestions, syntax-highlighting) are cloned
+- All dotfiles are deployed to `~/.config/`, `~/.local/`, etc.
+- KDE Plasma layout is applied (version auto-detected)
+- Systemd services are enabled and started
+
+**Manual Plasma layout application (if needed):**
+```bash
+# If the automatic layout application didn't work, run manually:
+bash ~/.local/share/chezmoi/plasma/v6/apply_layout.sh   # Plasma 6
+# bash ~/.local/share/chezmoi/plasma/v5/apply_layout.sh # Plasma 5
+```
+
+**Updating your dotfiles:**
+```bash
+# Pull latest changes and apply
+chezmoi update
+
+# Or manually:
+chezmoi git pull && chezmoi apply
+```
+
+**Managing dotfiles:**
+```bash
+# Edit a file (opens in your $EDITOR)
+chezmoi edit ~/.zshrc
+
+# See what would change
+chezmoi diff
+
+# Apply changes
+chezmoi apply
+
+# Add a new file to be managed
+chezmoi add ~/.bashrc
+```
+
+> **Tip:** After the initial setup, log out and back in (or restart plasmashell) for the Plasma layout to take full effect.
 
 ---
 
@@ -199,14 +215,14 @@ bash ~/dotfiles/plasma/v6/harvest_layout.sh
 bash ~/dotfiles/plasma/v6/apply_layout.sh
 ```
 
-**Shared KDE configs** in `plasma/common/.config/`:
+**Shared KDE configs** are managed by chezmoi under `dot_config/` and deployed to `~/.config/`:
 
 | File | What it controls |
 |---|---|
 | `kdeglobals` | Breeze Dark colour scheme, animation speed, contrast |
 | `kglobalshortcutsrc` | Global keyboard shortcuts |
 | `kwinrc` | Window decoration and tiling behaviour |
-| `kscreenlockerrc` | Lock screen wallpaper path |
+| `kscreenlockerrc` | Lock screen wallpaper path (runtime-managed by `scripts/wallpaper_wallhaven.sh`, not by chezmoi) |
 | `konsolerc` | Default Konsole terminal settings |
 | `kwalletrc` | KWallet daemon configuration |
 
@@ -267,7 +283,7 @@ bash ~/dotfiles/scripts/update_sddm_wallpaper.sh
 
 ### 3. Systemd User Services
 
-**Location:** `systemd/.config/systemd/user/`
+**Location:** `dot_config/systemd/user/`
 
 All units run as the **user** (no root required) via `systemctl --user`.
 
@@ -302,7 +318,7 @@ systemctl --user disable --now inbox-watcher.service wallpaper-refresh.timer
 
 ### 4. Zsh Shell Configuration
 
-**Location:** `zsh/.zshrc`
+**Location:** `dot_zshrc`
 
 Built on **Oh My Zsh** with the **Starship** cross-shell prompt. Performance-sensitive plugins (`zsh-autosuggestions`, `zsh-syntax-highlighting`) are loaded asynchronously in a subshell to keep startup fast.
 
@@ -325,27 +341,27 @@ Built on **Oh My Zsh** with the **Starship** cross-shell prompt. Performance-sen
 
 ### 5. Application Configurations
 
-#### Git — `git/.gitconfig`
-Global Git identity (name and email). Symlink to `~/.gitconfig`.
+#### Git — `dot_gitconfig`
+Global Git identity (name and email), managed by chezmoi and deployed to `~/.gitconfig`.
 
-#### Konsole — `konsole/.local/share/`
-Terminal profiles and colour schemes for the KDE Konsole emulator.
+#### Konsole — `dot_local/share/konsole/`
+Terminal profiles and colour schemes for the KDE Konsole emulator (migrated).
 
-#### VS Code — `vscode/.var/app/`
-Settings and keybindings for the VS Code Flatpak installation.
+#### VS Code — `dot_var/app/com.visualstudio.code/config/Code/User/`
+Settings for the VS Code Flatpak installation (migrated).
 
 #### Audacity — `audacity/.config/audacity/`
-Audacity preferences (sample rate, recording device, UI layout).
+Audacity preferences (sample rate, recording device, UI layout), currently kept in legacy module path.
 
 #### Double Commander — `doublecmd/.config/doublecmd/`
-File manager configuration including keyboard shortcuts, colour theme, and panel layout.
+File manager configuration including keyboard shortcuts, colour theme, and panel layout, currently kept in legacy module path.
 
 ---
 
 ## Security Notes
 
 - **No plain-text secrets.** Passwords are never stored in files. All credentials (Ansible Vault password, RDP password) are retrieved at runtime from **KWallet** using `kwallet-query`.
-- The `wallpaper-refresh.service` unit file currently hard-codes the home directory path (e.g. `/home/username/`). Update `ExecStart` in `systemd/.config/systemd/user/wallpaper-refresh.service` to use `%h` (the systemd specifier for the user's home directory) for portability.
+- Systemd units are templated and use `{{ .chezmoi.sourceDir }}` so scripts run from the chezmoi source directory without hard-coded home paths.
 - The `update_sddm_wallpaper.sh` script uses `sudo` to write to `/etc/sddm.conf.d/` — review it before running on a shared machine.
 
 ---
@@ -353,7 +369,9 @@ File manager configuration including keyboard shortcuts, colour theme, and panel
 ## Development Conventions
 
 - **Bash safety:** all scripts start with `set -euo pipefail` to catch unset variables, command failures, and pipe errors early.
-- **Dotfiles root:** scripts reference `$HOME/dotfiles` as the repository root. If you clone elsewhere, update this path or export a `DOTFILES` environment variable and adapt the scripts.
+- **chezmoi structure:** dotfiles use chezmoi's naming convention (`dot_` prefix for hidden files). See [chezmoi naming docs](https://www.chezmoi.io/reference/target-types/#file).
+- **Templates:** files ending in `.tmpl` are processed as templates and can use `{{ .chezmoi.homeDir }}` and other chezmoi variables.
+- **Scripts location:** automation scripts live in the `scripts/` directory and are **not** deployed to `$HOME` (they run from the chezmoi source directory).
 - **Atomic file operations:** `process_inbox.sh` uses `flock` to prevent concurrent runs and `sha256sum` to detect duplicate content before moving files.
 
 ---
@@ -370,15 +388,16 @@ File manager configuration including keyboard shortcuts, colour theme, and panel
 - [x] Podman-containerised Gemini CLI alias
 - [x] Shared KDE theme, shortcuts, and kwin settings
 
-### Phase 2 — Installation & Portability (next)
-- [ ] Write a top-level `install.sh` that symlinks all configs and enables systemd units in one command
-- [ ] Add [GNU Stow](https://www.gnu.org/software/stow/) support as an alternative to manual symlinking
-- [ ] Replace hard-coded `/home/bhupi/` in `wallpaper-refresh.service` with the `%h` specifier
-- [ ] Support `$DOTFILES` environment variable override across all scripts
+### Phase 2 — Installation & Portability (completed ✅)
+- [x] Migrated from manual symlinking to **chezmoi** for automated dotfiles management
+- [x] Replaced hard-coded `/home/bhupi/` paths with chezmoi templates (`{{ .chezmoi.homeDir }}`)
+- [x] Automated Oh My Zsh and Starship installation on first run
+- [x] Automated systemd service enablement via chezmoi scripts
+- [x] Auto-detection of Plasma version (5 or 6) for layout application
 
 ### Phase 3 — Reliability & Observability
 - [ ] Add structured logging to `process_inbox.sh` (timestamped log file under `~/.local/share/process_inbox/`)
-- [ ] Add health-check script that verifies all symlinks and services are active
+- [ ] Add health-check script that verifies managed files and services are active
 - [ ] Write unit tests for the collision-handling logic in `process_inbox.sh` using `bats` (Bash Automated Testing System)
 - [ ] Add `--dry-run` flag to `process_inbox.sh` to preview moves without making changes
 
