@@ -3,14 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/bin:$HOME/.local/bin:$PATH"
 export PATH="/opt/oci/bin/:$PATH"
 ZSH_THEME=""
-plugins=(git autoswitch_virtualenv zsh-history-substring-search)
+plugins=(git autoswitch_virtualenv zsh-history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-
-# Load slow plugins after main initialization
-(
-  source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-  source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-) &!
 
 if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
