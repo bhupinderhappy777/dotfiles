@@ -63,7 +63,7 @@ export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 # Gemini CLI - Podman Containerized (No-Clutter)
 if [ ! -d "$HOME/.gemini/bin" ]; then mkdir -p "$HOME/.gemini/bin"; fi
 
-alias gemini='podman run --rm -it \
+alias geminicli='podman run --rm -it \
   --userns=keep-id \
   --net=host \
   --env="TERM=xterm-256color" \
