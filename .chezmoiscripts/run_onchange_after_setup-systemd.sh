@@ -3,6 +3,12 @@
 
 set -euo pipefail
 
+# Skip in CLI environments (Codespaces, SSH without X11, etc.)
+if [[ -n "${CODESPACES:-}" ]] || [[ -z "${DISPLAY:-}" ]]; then
+    echo "Skipping systemd user services setup in CLI environment"
+    exit 0
+fi
+
 echo "Setting up systemd user services..."
 
 # Reload systemd user daemon

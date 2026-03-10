@@ -4,6 +4,12 @@
 
 set -euo pipefail
 
+# Skip in CLI environments (Codespaces, SSH without X11, etc.)
+if [[ -n "${CODESPACES:-}" ]] || [[ -z "${DISPLAY:-}" ]]; then
+    echo "Skipping Plasma layout setup in CLI environment"
+    exit 0
+fi
+
 PLASMA_VERSION="{{ .plasma_version }}"
 SCRIPT_DIR="{{ .chezmoi.sourceDir }}/plasma/v${PLASMA_VERSION}"
 
