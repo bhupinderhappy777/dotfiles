@@ -35,6 +35,19 @@ Activates `wallpaper-refresh.service` on a schedule.
 | `OnCalendar=*-*-* 03:00:00` | Once every day at 03:00 |
 | `Persistent=true` | Catches up on missed runs (e.g. after sleep) |
 
+### `plasma-harvest.path` + `plasma-harvest.service`
+
+Automatically keeps your Plasma layout dotfiles up to date.
+
+| Unit | Purpose |
+|---|---|
+| `plasma-harvest.path` | Watches `%h/.config/plasma-org.kde.plasma.desktop-appletsrc` and `%h/.config/kscreenlockerrc` |
+| `plasma-harvest.service` | Runs `{{ .chezmoi.sourceDir }}/scripts/auto_harvest_plasma.sh` to harvest changes into `plasma/v*/` |
+
+The harvest script updates both:
+- `plasma/v*/appletsrc.master`
+- `plasma/v*/kscreenlockerrc.master`
+
 ## Installation
 
 **Automatic (via chezmoi):**
@@ -46,6 +59,7 @@ chezmoi apply
 # - Reloading systemd user daemon
 # - Enabling and starting inbox-watcher.service
 # - Enabling and starting wallpaper-refresh.timer
+# - Enabling and starting plasma-harvest.path
 ```
 
 **Manual installation (if needed):**
@@ -66,10 +80,12 @@ systemctl --user enable --now inbox-watcher.service wallpaper-refresh.timer
 # Check status
 systemctl --user status inbox-watcher.service
 systemctl --user status wallpaper-refresh.timer
+systemctl --user status plasma-harvest.path
 
 # View real-time logs
 journalctl --user -u inbox-watcher.service -f
 journalctl --user -u wallpaper-refresh.service -n 50
+journalctl --user -u plasma-harvest.service -n 50
 
 # Trigger a wallpaper change immediately (outside the schedule)
 systemctl --user start wallpaper-refresh.service
@@ -78,7 +94,7 @@ systemctl --user start wallpaper-refresh.service
 systemctl --user restart inbox-watcher.service
 
 # Disable everything
-systemctl --user disable --now inbox-watcher.service wallpaper-refresh.timer
+systemctl --user disable --now inbox-watcher.service wallpaper-refresh.timer plasma-harvest.path
 ```
 
 ## Notes

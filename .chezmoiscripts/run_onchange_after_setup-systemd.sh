@@ -44,4 +44,19 @@ else
     systemctl --user start wallpaper-refresh.timer
 fi
 
+# Enable and start Plasma auto-harvest path watcher
+if systemctl --user is-enabled plasma-harvest.path &>/dev/null; then
+    echo "plasma-harvest.path already enabled"
+else
+    echo "Enabling plasma-harvest.path..."
+    systemctl --user enable plasma-harvest.path
+fi
+
+if systemctl --user is-active plasma-harvest.path &>/dev/null; then
+    echo "plasma-harvest.path already running"
+else
+    echo "Starting plasma-harvest.path..."
+    systemctl --user start plasma-harvest.path
+fi
+
 echo "Systemd services configured!"

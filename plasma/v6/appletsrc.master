@@ -1,4 +1,3 @@
-# Captured from lenovopc on Tue Mar  3 01:28:46 PM PST 2026
 [ActionPlugins][0]
 MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
@@ -18,7 +17,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260303_102609.jpg
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260309_191500.jpg
 
 [Containments][2]
 activityId=563d5848-eadb-45b9-beca-bd09198cce0f
@@ -34,7 +33,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=preferred://filemanager,preferred://browser,applications:org.mozilla.Thunderbird.desktop
+launchers=preferred://filemanager,preferred://browser,applications:org.mozilla.Thunderbird.desktop,applications:com.visualstudio.code.desktop
 
 [Containments][2][Applets][6]
 immutability=1

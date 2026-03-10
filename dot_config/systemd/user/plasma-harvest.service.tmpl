@@ -1,0 +1,8 @@
+[Unit]
+Description=Harvest Plasma config changes into dotfiles
+After=graphical-session.target
+ConditionPathExists=%h/.config/plasma-org.kde.plasma.desktop-appletsrc
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash {{ .chezmoi.sourceDir }}/scripts/auto_harvest_plasma.sh

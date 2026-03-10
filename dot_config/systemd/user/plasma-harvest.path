@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch Plasma config files and auto-harvest dotfiles
+
+[Path]
+PathChanged=%h/.config/plasma-org.kde.plasma.desktop-appletsrc
+PathChanged=%h/.config/kscreenlockerrc
+Unit=plasma-harvest.service
+
+[Install]
+WantedBy=default.target

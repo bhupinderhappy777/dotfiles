@@ -1,0 +1,5 @@
+[Daemon]
+Timeout=2
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=file:///home/bhupi/Pictures/Wallpapers/wallhaven_20260309_191500.jpg
