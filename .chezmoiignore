@@ -12,6 +12,7 @@ plasma/*/appletsrc.master
 
 # Scripts that live in the repo, not in $HOME
 scripts/
+install.sh
 
 # Plasma directory itself (contents managed individually)
 plasma/

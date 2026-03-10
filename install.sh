@@ -4,6 +4,8 @@
 
 set -e
 
+SOURCE_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 # Check if chezmoi is already installed
 if ! command -v chezmoi &> /dev/null; then
     echo "Installing chezmoi..."
@@ -14,6 +16,6 @@ fi
 
 # Initialize and apply dotfiles
 echo "Applying dotfiles with chezmoi..."
-chezmoi init --apply --source="${HOME}/dotfiles"
+chezmoi init --apply --source="${SOURCE_DIR}"
 
 echo "Dotfiles setup complete!"
